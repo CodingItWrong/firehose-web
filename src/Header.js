@@ -17,6 +17,9 @@ export default function Layout() {
           <li>
             <Link to="/links/read">Read</Link>
           </li>
+          <li>
+            <Link to="/tags">Tags</Link>
+          </li>
         </ul>
       </nav>
     </>
