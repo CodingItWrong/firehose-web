@@ -10,6 +10,7 @@ export const LOADING_INDICATOR = {
 
 export default function BookmarkFlatList({
   bookmarks,
+  path,
   errorMessage,
   loadingIndicator,
   onRefresh,
@@ -43,6 +44,7 @@ export default function BookmarkFlatList({
           <BookmarkRow
             key={bookmark.id}
             bookmark={bookmark}
+            path={path}
             onMarkRead={() => onMarkRead(bookmark)}
             onMarkUnread={() => onMarkUnread(bookmark)}
             onDelete={() => onDelete(bookmark)}

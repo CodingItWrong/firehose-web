@@ -1,9 +1,11 @@
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import domainForUrl from '../../utils/domainForUrl';
 import Tag from '../Tag';
 
 export default function BookmarkRow({
   bookmark,
+  path,
   onEdit,
   onClickTag,
   onMarkRead,
@@ -92,13 +94,8 @@ export default function BookmarkRow({
           >
             Mark Read
           </ButtonWithSpacing>
-        )}
-        <ButtonWithSpacing
-          onClick={() => onEdit()}
-          disabled={isUpdateInProgress}
-        >
-          Edit
-        </ButtonWithSpacing>
+        )}{' '}
+        <Link to={`${path}/${bookmark.id}`}>Edit</Link>{' '}
         <ButtonWithSpacing
           mode="contained"
           onClick={() => onDelete()}

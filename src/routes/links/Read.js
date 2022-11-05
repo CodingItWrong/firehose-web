@@ -41,6 +41,7 @@ export default function ReadScreen() {
       onDecrement={decrement}
       showSearchForm
       onSearch={search}
+      path="/links/read"
     />
   );
 }

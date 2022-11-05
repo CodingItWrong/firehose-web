@@ -7,6 +7,7 @@ import NewBookmarkForm from './NewBookmarkForm';
 // import SearchForm from './SearchForm';
 
 export default function BookmarkList({
+  path,
   query,
   queryKey,
   paginate,
@@ -127,6 +128,7 @@ export default function BookmarkList({
         listRef={listRef}
         loadingIndicator={loadingIndicatorToUse}
         bookmarks={bookmarksResult.data ?? []}
+        path={path}
         errorMessage={errorMessageToUse}
         onRefresh={refreshWithLoadingIndicator}
         onMarkRead={markRead}
