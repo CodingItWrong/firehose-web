@@ -4,12 +4,11 @@ import {useBookmarks} from '../../../data/bookmarks';
 import BookmarkDetailForm from './BookmarkDetailForm';
 
 export default function BookmarkDetail({parentPath}) {
-  const path = useResolvedPath();
-  console.log({path});
-  console.log('BookmarkDetail', id);
+  const {pathname} = useResolvedPath();
+  const parentPathToUse =
+    parentPath ?? pathname.substring(0, pathname.lastIndexOf('/'));
   const {id} = useParams();
   const navigate = useNavigate();
-  console.log({id});
   const bookmarkClient = useBookmarks();
 
   const [bookmark, setBookmark] = useState(null);
@@ -33,7 +32,7 @@ export default function BookmarkDetail({parentPath}) {
   }
 
   function handleCancel() {
-    navigate(parentPath);
+    navigate(parentPathToUse);
   }
 
   if (!bookmark) {

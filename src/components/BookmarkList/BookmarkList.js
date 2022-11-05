@@ -31,8 +31,6 @@ export default function BookmarkList({
   const bookmarksResult = useQuery(queryKey, query);
   const queryClient = useQueryClient();
 
-  console.log({queryKey, data: bookmarksResult.data});
-
   const loadingIndicatorToUse = isPerformingInitialLoad
     ? LOADING_INDICATOR.STANDALONE
     : loadingIndicator;

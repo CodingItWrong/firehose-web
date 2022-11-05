@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'links/read/:id',
-        element: <BookmarkDetail parentPath="/links/read" />,
+        element: <BookmarkDetail />,
       },
       {
         path: 'links/read',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'tags/:tagName/:id',
-        element: <BookmarkDetail parentPath="/tags/:tagName" />,
+        element: <BookmarkDetail />,
       },
       {
         path: 'tags/:tagName',

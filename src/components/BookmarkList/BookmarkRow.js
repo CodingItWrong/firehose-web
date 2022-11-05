@@ -10,7 +10,6 @@ export default function BookmarkRow({
   onMarkUnread,
   onDelete,
 }) {
-  console.log('BookmarkRow', {bookmark});
   // const [isDeleteDialogVisible, setIsDeleteDialogVisible] = useState(false);
   const [isUpdateInProgress, setIsUpdateInProgress] = useState(false);
 

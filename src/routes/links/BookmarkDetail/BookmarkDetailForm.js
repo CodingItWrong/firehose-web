@@ -46,7 +46,6 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
       />
       <TextInput
         label="Comment"
-        accessibilityLabel="Comment"
         value={comment}
         onChangeText={setComment}
         data-cy="comment-field"
