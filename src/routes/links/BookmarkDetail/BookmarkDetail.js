@@ -40,11 +40,14 @@ export default function BookmarkDetail({parentPath}) {
     return null; // TODO: loading state
   } else {
     return (
-      <BookmarkDetailForm
-        attributes={bookmark.attributes}
-        onCancel={handleCancel}
-        onSave={handleSave}
-      />
+      <>
+        <h2>Edit Link</h2>
+        <BookmarkDetailForm
+          attributes={bookmark.attributes}
+          onCancel={handleCancel}
+          onSave={handleSave}
+        />
+      </>
     );
   }
 }
