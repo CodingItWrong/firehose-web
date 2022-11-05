@@ -15,9 +15,9 @@ export default function BookmarkList({
   maxPageNumber,
   onIncrement,
   onDecrement,
-  onSearch,
+  // onSearch,
   showAddForm = false,
-  showSearchForm = false,
+  // showSearchForm = false,
 }) {
   const bookmarkClient = useBookmarks();
 

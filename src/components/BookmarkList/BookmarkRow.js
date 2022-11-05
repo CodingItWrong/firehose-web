@@ -6,13 +6,13 @@ import Tag from '../Tag';
 export default function BookmarkRow({
   bookmark,
   path,
-  onEdit,
+  // onEdit,
   onClickTag,
   onMarkRead,
   onMarkUnread,
   onDelete,
 }) {
-  const [isDeleteDialogVisible, setIsDeleteDialogVisible] = useState(false);
+  // const [isDeleteDialogVisible, setIsDeleteDialogVisible] = useState(false);
   const [isUpdateInProgress, setIsUpdateInProgress] = useState(false);
 
   const {title, url, source, comment} = bookmark.attributes;
