@@ -1,9 +1,10 @@
 body {
   font-size: 16px;
+  font-family: Arial;
 }
 
-input,
-button {
+.solid-input {
+  background-color: white;
   border: solid 1px gray;
   border-radius: 5px;
   color: black;
@@ -11,12 +12,31 @@ button {
   padding: 3px 6px;
 }
 
-button {
+.solid-button {
   background-color: #eee;
+  border: solid 1px gray;
+  border-radius: 5px;
+  color: black;
+  cursor: default;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 3px 6px;
+  text-decoration: none;
 }
 
-input {
-  background-color: white;
+.solid-button:disabled {
+  background-color:  white;
+  border-color: #ccc;
+  color: gray;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 238);
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
 }
 
 .site-header {

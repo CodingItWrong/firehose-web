@@ -29,6 +29,7 @@ export default function Layout() {
               type="button"
               data-cy="sign-out-button"
               onClick={clearToken}
+              className="link"
             >
               Sign Out
             </button>

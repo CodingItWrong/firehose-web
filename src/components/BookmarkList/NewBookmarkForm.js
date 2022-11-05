@@ -29,6 +29,7 @@ export default function NewBookmarkForm({isCreating, onCreate}) {
           onChange={e => setUrl(e.target.value)}
           autoCapitalize="none"
           autoCorrect="off"
+          className="solid-input"
         />
       </div>
       {isCreating && <div>Saving…</div>}

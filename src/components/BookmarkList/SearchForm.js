@@ -20,6 +20,7 @@ export default function SearchForm({value, onSubmit}) {
           onChange={e => setSearchText(e.target.value)}
           autoCapitalize="none"
           autoCorrect="off"
+          className="solid-input"
         />
       </div>
     </form>

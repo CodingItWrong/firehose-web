@@ -11,9 +11,10 @@ export default function PaginationControls({
     <div>
       <button
         type="button"
-        data-cy="previous-page-button"
         disabled={pageNumberAtMin}
         onClick={onDecrement}
+        className="solid-button"
+        data-cy="previous-page-button"
       >
         &lt;
       </button>
@@ -23,9 +24,10 @@ export default function PaginationControls({
       </span>
       <button
         type="button"
-        data-cy="next-page-button"
         disabled={pageNumberAtMax}
         onClick={onIncrement}
+        className="solid-button"
+        data-cy="next-page-button"
       >
         &gt;
       </button>

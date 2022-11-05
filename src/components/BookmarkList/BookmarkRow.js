@@ -101,7 +101,11 @@ export default function BookmarkRow({
             Mark Read
           </ButtonWithSpacing>
         )}{' '}
-        <Link to={`${path}/${bookmark.id}`} data-cy="edit-link">
+        <Link
+          to={`${path}/${bookmark.id}`}
+          className="solid-button"
+          data-cy="edit-link"
+        >
           Edit
         </Link>{' '}
         <ButtonWithSpacing
@@ -118,7 +122,11 @@ export default function BookmarkRow({
 }
 
 function ButtonWithSpacing({children, ...props}) {
-  return <button {...props}>{children}</button>;
+  return (
+    <button {...props} className="solid-button">
+      {children}
+    </button>
+  );
 }
 
 function Source({source}) {

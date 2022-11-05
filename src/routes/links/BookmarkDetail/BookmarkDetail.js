@@ -31,10 +31,6 @@ export default function BookmarkDetail({parentPath}) {
     }
   }
 
-  function handleCancel() {
-    navigate(parentPathToUse);
-  }
-
   if (!bookmark) {
     return null; // TODO: loading state
   } else {
@@ -43,7 +39,7 @@ export default function BookmarkDetail({parentPath}) {
         <h2>Edit Link</h2>
         <BookmarkDetailForm
           attributes={bookmark.attributes}
-          onCancel={handleCancel}
+          cancelPath={parentPathToUse}
           onSave={handleSave}
         />
       </>

@@ -33,7 +33,11 @@ export default function BookmarkFlatList({
   return (
     <>
       {listHeader()}
-      <button type="button" onClick={refreshFromButton}>
+      <button
+        type="button"
+        onClick={refreshFromButton}
+        className="solid-button"
+      >
         Reload
       </button>
       {loadingIndicator === LOADING_INDICATOR.STANDALONE && (

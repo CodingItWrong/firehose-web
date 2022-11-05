@@ -1,7 +1,8 @@
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import ButtonGroup from '../../../components/ButtonGroup';
 
-export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
+export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
   const [url, setUrl] = useState(attributes.url);
   const [title, setTitle] = useState(attributes.title);
   const [tagList, setTagList] = useState(attributes['tag-list']);
@@ -20,12 +21,14 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
         label="URL"
         value={url}
         onChangeText={setUrl}
+        className="solid-input"
         data-cy="url-field"
       />
       <TextInput
         label="Title"
         value={title}
         onChangeText={setTitle}
+        className="solid-input"
         data-cy="title-field"
       />
       <TextInput
@@ -34,6 +37,7 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
         onChangeText={setTagList}
         autoCapitalize="none"
         autoCorrect={false}
+        className="solid-input"
         data-cy="tags-field"
       />
       <TextInput
@@ -42,19 +46,21 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
         onChangeText={setSource}
         autoCapitalize="none"
         autoCorrect={false}
+        className="solid-input"
         data-cy="source-field"
       />
       <TextInput
         label="Comment"
         value={comment}
         onChangeText={setComment}
+        className="solid-input"
         data-cy="comment-field"
       />
       <ButtonGroup>
-        <button type="button" onClick={onCancel}>
+        <Link to={cancelPath} className="solid-button">
           Cancel
-        </button>
-        <button type="submit" data-cy="save-button">
+        </Link>
+        <button type="submit" className="solid-button" data-cy="save-button">
           Save
         </button>
       </ButtonGroup>
