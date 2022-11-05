@@ -31,17 +31,20 @@ export default function ReadScreen() {
   }
 
   return (
-    <BookmarkList
-      query={query}
-      queryKey={queryKey}
-      paginate
-      pageNumber={page}
-      maxPageNumber={maxPage}
-      onIncrement={increment}
-      onDecrement={decrement}
-      showSearchForm
-      onSearch={search}
-      path="/links/read"
-    />
+    <>
+      <h2>Read</h2>
+      <BookmarkList
+        query={query}
+        queryKey={queryKey}
+        paginate
+        pageNumber={page}
+        maxPageNumber={maxPage}
+        onIncrement={increment}
+        onDecrement={decrement}
+        showSearchForm
+        onSearch={search}
+        path="/links/read"
+      />
+    </>
   );
 }

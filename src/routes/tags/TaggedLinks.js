@@ -20,5 +20,10 @@ export default function TaggedLinksScreen() {
   }, [tagClient, tagName]);
   const queryKey = ['links-for-tag', tagName];
 
-  return <BookmarkList query={query} queryKey={queryKey} />;
+  return (
+    <>
+      <h2>Tag: {tagName}</h2>
+      <BookmarkList query={query} queryKey={queryKey} />
+    </>
+  );
 }

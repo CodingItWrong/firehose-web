@@ -25,10 +25,11 @@ export default function TagList() {
 
   return (
     <>
+      <h2>Tags</h2>
       {listHeader()}
       <ul>
         {sortedTags?.map(tag => (
-          <Tag key={tag.attributes.name} name={tag.attributes.name} />
+          <Tag key={tag.id} name={tag.attributes.name} />
         ))}
       </ul>
     </>

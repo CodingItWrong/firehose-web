@@ -15,11 +15,14 @@ export default function UnreadScreen() {
   const queryKey = ['unread-links'];
 
   return (
-    <BookmarkList
-      query={query}
-      queryKey={queryKey}
-      showAddForm
-      path="/links/unread"
-    />
+    <>
+      <h2>Unread</h2>
+      <BookmarkList
+        query={query}
+        queryKey={queryKey}
+        showAddForm
+        path="/links/unread"
+      />
+    </>
   );
 }

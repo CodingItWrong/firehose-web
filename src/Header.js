@@ -6,6 +6,7 @@ export default function Layout() {
 
   return (
     <>
+      <h1>Firehose</h1>
       <button type="button" onClick={clearToken}>
         Sign Out
       </button>
