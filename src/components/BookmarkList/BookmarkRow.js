@@ -97,6 +97,7 @@ export default function BookmarkRow({
         <ButtonWithSpacing
           mode="contained"
           onClick={() => onDelete()}
+          data-cy="delete-button"
           disabled={isUpdateInProgress}
         >
           Delete
