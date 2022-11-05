@@ -10,14 +10,18 @@ export default function SearchForm({value, onSubmit}) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="search"
-        placeholder="Search"
-        value={searchText}
-        onChange={e => setSearchText(e.target.value)}
-        autoCapitalize="none"
-        autoCorrect="off"
-      />
+      <div>
+        <label htmlFor="search-field">Search</label>
+      </div>
+      <div>
+        <input
+          type="search"
+          value={searchText}
+          onChange={e => setSearchText(e.target.value)}
+          autoCapitalize="none"
+          autoCorrect="off"
+        />
+      </div>
     </form>
   );
 }

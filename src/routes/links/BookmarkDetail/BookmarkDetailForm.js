@@ -62,11 +62,21 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
   );
 }
 
-const TextInput = ({label, onChangeText, ...props}) => (
-  <input
-    type="text"
-    placeholder={label}
-    onChange={e => onChangeText(e.target.value)}
-    {...props}
-  />
-);
+const TextInput = ({label, onChangeText, ...props}) => {
+  const id = `field-${label}`;
+  return (
+    <>
+      <div>
+        <label htmlFor={id}>{label}</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          id={id}
+          onChange={e => onChangeText(e.target.value)}
+          {...props}
+        />
+      </div>
+    </>
+  );
+};

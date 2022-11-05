@@ -17,16 +17,21 @@ export default function NewBookmarkForm({isCreating, onCreate}) {
 
   return (
     <form onSubmit={handleCreate}>
-      <input
-        type="url"
-        placeholder="URL to Add"
-        data-cy="url-to-add-field"
-        value={url}
-        onChange={e => setUrl(e.target.value)}
-        autoCapitalize="none"
-        autoCorrect="off"
-      />
-      {isCreating && <span>Saving…</span>}
+      <div>
+        <label htmlFor="url-to-add-field">URL to add</label>
+      </div>
+      <div>
+        <input
+          type="url"
+          id="url-to-add-field"
+          data-cy="url-to-add-field"
+          value={url}
+          onChange={e => setUrl(e.target.value)}
+          autoCapitalize="none"
+          autoCorrect="off"
+        />
+      </div>
+      {isCreating && <div>Saving…</div>}
     </form>
   );
 }
