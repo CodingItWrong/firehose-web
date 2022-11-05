@@ -38,14 +38,19 @@ export default function BookmarkRow({
 
   function renderUrl() {
     return (
-      <a href={bookmark.attributes.url} target="_blank" rel="noreferrer">
+      <a
+        href={bookmark.attributes.url}
+        target="_blank"
+        rel="noreferrer"
+        className="bookmark__url"
+      >
         {domainForUrl(url)}
       </a>
     );
   }
 
   return (
-    <li>
+    <li className="bookmark">
       {/*<Portal>
         <Dialog visible={isDeleteDialogVisible}>
           <Dialog.Title>Are you sure?</Dialog.Title>
@@ -65,8 +70,8 @@ export default function BookmarkRow({
         </Dialog>
       </Portal>*/}
       <div>
-        {renderTitle()}
-        {comment ? <p>{comment}</p> : null}
+        <div className="bookmark__title">{renderTitle()}</div>
+        {comment ? <div>{comment}</div> : null}
         <div>
           {renderUrl()}
           <Source source={source} />

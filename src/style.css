@@ -25,3 +25,23 @@ button {
   display: inline-block;
   margin-right: 10px;
 }
+
+.bookmarks-list {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.bookmark {
+  border-bottom: solid 1px gray;
+  padding: 10px 0;
+}
+
+.bookmark__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bookmark__url {
+  color: gray;
+}
