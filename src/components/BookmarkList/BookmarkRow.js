@@ -47,7 +47,7 @@ export default function BookmarkRow({
   }
 
   return (
-    <div>
+    <li>
       {/*<Portal>
         <Dialog visible={isDeleteDialogVisible}>
           <Dialog.Title>Are you sure?</Dialog.Title>
@@ -104,7 +104,7 @@ export default function BookmarkRow({
           Delete
         </ButtonWithSpacing>
       </div>
-    </div>
+    </li>
   );
 }
 
