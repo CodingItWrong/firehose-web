@@ -16,10 +16,14 @@ export default function Layout() {
             <Link to="/">Unread</Link>
           </li>
           <li>
-            <Link to="/links/read">Read</Link>
+            <Link to="/links/read" data-cy="read-link">
+              Read
+            </Link>
           </li>
           <li>
-            <Link to="/tags">Tags</Link>
+            <Link to="/tags" data-cy="tags-link">
+              Tags
+            </Link>
           </li>
         </ul>
       </nav>

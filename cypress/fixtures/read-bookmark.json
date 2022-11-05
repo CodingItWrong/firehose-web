@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "type": "bookmarks",
+      "id": "1",
+      "attributes": {
+        "url": "https://reactnative.dev",
+        "title": "React Native",
+        "read": true
+      }
+    }
+  ],
+  "meta": {
+    "page-count": 0
+  }
+}

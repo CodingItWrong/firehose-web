@@ -6,10 +6,17 @@ describe('unread links', () => {
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=false&',
-      {fixture: 'unread-bookmark.json'},
-    ).as('loadBookmarks');
-    cy.intercept('POST', 'http://localhost:3000/api/bookmarks?').as(
-      'addBookmark',
+      {fixture: 'no-bookmarks.json'},
+    );
+    cy.intercept('GET', 'http://localhost:3000/api/tags?', {
+      fixture: 'tags.json',
+    });
+    cy.intercept(
+      'GET',
+      'http://localhost:3000/api/tags?filter[name]=bar&include=bookmarks',
+      {
+        fixture: 'tag-with-bookmark.json',
+      },
     );
     cy.intercept('PATCH', 'http://localhost:3000/api/bookmarks/1?').as(
       'updateBookmark',
@@ -28,12 +35,11 @@ describe('unread links', () => {
     cy.getTestId('sign-in-button').click();
     cy.getTestId('tags-link').click();
 
-    // list links
-    cy.getTestId('bookmarks-list').contains('React Native');
+    // list tags
+    cy.getTestId('tag-link').contains('bar').click();
 
-    // add bookmark
-    cy.getTestId('url-to-add-field').type('https://codingitwrong.com{enter}');
-    cy.wait('@addBookmark');
+    // list bookmarks
+    cy.getTestId('bookmarks-list').contains('Google');
 
     // mark bookmark read
     cy.getTestId('mark-read-button').click();

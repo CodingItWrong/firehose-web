@@ -1,4 +1,4 @@
-describe('unread links', () => {
+describe('read links', () => {
   beforeEach(() => {
     cy.intercept('POST', 'http://localhost:3000/api/oauth/token', {
       fixture: 'session.json',
@@ -6,11 +6,13 @@ describe('unread links', () => {
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=false&',
-      {fixture: 'unread-bookmark.json'},
+      {fixture: 'no-bookmarks.json'},
     ).as('loadBookmarks');
-    cy.intercept('POST', 'http://localhost:3000/api/bookmarks?').as(
-      'addBookmark',
-    );
+    cy.intercept(
+      'GET',
+      'http://localhost:3000/api/bookmarks?filter[read]=true&page[number]=1',
+      {fixture: 'read-bookmark.json'},
+    ).as('loadBookmarks');
     cy.intercept('PATCH', 'http://localhost:3000/api/bookmarks/1?').as(
       'updateBookmark',
     );
@@ -26,24 +28,20 @@ describe('unread links', () => {
     cy.getTestId('email-field').type('example@example.com');
     cy.getTestId('password-field').type('password');
     cy.getTestId('sign-in-button').click();
-    cy.getTestId('tags-link').click();
+    cy.getTestId('read-link').click();
 
     // list links
     cy.getTestId('bookmarks-list').contains('React Native');
 
-    // add bookmark
-    cy.getTestId('url-to-add-field').type('https://codingitwrong.com{enter}');
-    cy.wait('@addBookmark');
-
     // mark bookmark read
-    cy.getTestId('mark-read-button').click();
+    cy.getTestId('mark-unread-button').click();
     cy.wait('@updateBookmark')
       .its('request.body')
       .should('deep.equal', {
         data: {
           type: 'bookmarks',
           id: '1',
-          attributes: {read: true},
+          attributes: {read: false},
         },
       });
 

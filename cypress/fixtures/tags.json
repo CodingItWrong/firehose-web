@@ -1,0 +1,21 @@
+{
+    "data":
+    [
+        {
+            "id": "2",
+            "type": "tags",
+            "links":
+            {
+                "self": "http://localhost:3000/api/tags/2"
+            },
+            "attributes":
+            {
+                "name": "bar"
+            }
+        }
+    ],
+    "meta":
+    {
+        "page-count": null
+    }
+}

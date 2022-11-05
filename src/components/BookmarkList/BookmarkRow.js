@@ -10,6 +10,7 @@ export default function BookmarkRow({
   onMarkUnread,
   onDelete,
 }) {
+  console.log('BookmarkRow', {bookmark});
   // const [isDeleteDialogVisible, setIsDeleteDialogVisible] = useState(false);
   const [isUpdateInProgress, setIsUpdateInProgress] = useState(false);
 
@@ -81,7 +82,10 @@ export default function BookmarkRow({
       </div>
       <div>
         {bookmark.attributes.read ? (
-          <ButtonWithSpacing onClick={onMarkUnread}>
+          <ButtonWithSpacing
+            data-cy="mark-unread-button"
+            onClick={onMarkUnread}
+          >
             Mark Unread
           </ButtonWithSpacing>
         ) : (

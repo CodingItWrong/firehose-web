@@ -1,0 +1,44 @@
+{
+    "data":
+    [
+        {
+            "id": "2",
+            "type": "tags",
+            "links":
+            {
+                "self": "http://localhost:3000/api/tags/2"
+            },
+            "attributes":
+            {
+                "name": "bar"
+            }
+        }
+    ],
+    "included":
+    [
+        {
+            "id": "1",
+            "type": "bookmarks",
+            "links":
+            {
+                "self": "http://localhost:3000/api/bookmarks/1"
+            },
+            "attributes":
+            {
+                "title": "Google",
+                "url": "https://www.google.com/",
+                "comment": null,
+                "source": null,
+                "read": false,
+                "moved-to-list-at": "2022-09-24T19:03:17.969Z",
+                "public": false,
+                "published-at": null,
+                "tag-list": "bar"
+            }
+        }
+    ],
+    "meta":
+    {
+        "page-count": null
+    }
+}
