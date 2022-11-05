@@ -4,7 +4,7 @@ import {useBookmarks} from '../../data/bookmarks';
 import PaginationControls from '../PaginationControls';
 import BookmarkFlatList, {LOADING_INDICATOR} from './BookmarkFlatList';
 import NewBookmarkForm from './NewBookmarkForm';
-// import SearchForm from './SearchForm';
+import SearchForm from './SearchForm';
 
 export default function BookmarkList({
   path,
@@ -15,9 +15,9 @@ export default function BookmarkList({
   maxPageNumber,
   onIncrement,
   onDecrement,
-  // onSearch,
+  onSearch,
   showAddForm = false,
-  // showSearchForm = false,
+  showSearchForm = false,
 }) {
   const bookmarkClient = useBookmarks();
 
@@ -115,7 +115,7 @@ export default function BookmarkList({
       {showAddForm && (
         <NewBookmarkForm isCreating={isCreating} onCreate={addBookmark} />
       )}
-      {/*{showSearchForm && <SearchForm onSubmit={onSearch} />}*/}
+      {showSearchForm && <SearchForm onSubmit={onSearch} />}
       {paginate && bookmarksResult.data && (
         <PaginationControls
           pageNumber={pageNumber}
