@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 import TokenLoadBuffer from './components/TokenLoadBuffer';
 import {TokenProvider, useToken} from './data/token';
 import SignIn from './routes/SignIn';
+import './style.css';
 
 const queryClient = new QueryClient({
   defaultOptions: {
