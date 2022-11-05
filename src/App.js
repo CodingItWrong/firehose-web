@@ -1,11 +1,8 @@
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Layout from './Layout';
+import Navigation from './Navigation';
 import TokenLoadBuffer from './components/TokenLoadBuffer';
 import {TokenProvider, useToken} from './data/token';
 import SignIn from './routes/SignIn';
-import ReadLinks from './routes/links/Read';
-import UnreadLinks from './routes/links/Unread';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,23 +11,6 @@ const queryClient = new QueryClient({
     },
   },
 });
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <UnreadLinks />,
-      },
-      {
-        path: '/links/read',
-        element: <ReadLinks />,
-      },
-    ],
-  },
-]);
 
 export default function App() {
   return (
@@ -45,14 +25,10 @@ export default function App() {
 }
 
 function Body() {
-  const {isLoggedIn, clearToken} = useToken();
+  const {isLoggedIn} = useToken();
 
   if (isLoggedIn) {
-    return (
-      <div>
-        <RouterProvider router={router} />
-      </div>
-    );
+    return <Navigation />;
   } else {
     return <SignIn />;
   }
