@@ -17,9 +17,10 @@ export default function PaginationControls({
       >
         &lt;
       </button>
-      <p>
-        Page {pageNumber} of {maxPageNumber}
-      </p>
+      <span>
+        {' '}
+        Page {pageNumber} of {maxPageNumber}{' '}
+      </span>
       <button
         type="button"
         data-cy="next-page-button"
