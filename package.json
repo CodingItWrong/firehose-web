@@ -8,6 +8,7 @@
     "start": "webpack server --open --config webpack.dev.js",
     "lint": "eslint src",
     "cypress": "cypress open",
+    "cypress:run": "cypress run",
     "build": "webpack --config webpack.prod.js && cp _redirects dist",
     "deploy": "yarn build && netlify deploy --prod"
   },
