@@ -20,6 +20,7 @@ body {
   cursor: default;
   font-family: inherit;
   font-size: inherit;
+  font-weight: normal;
   padding: 3px 6px;
   text-decoration: none;
 }
