@@ -27,7 +27,7 @@ export default function TagList() {
     <>
       <h2>Tags</h2>
       {listHeader()}
-      <ul>
+      <ul className="tag-list">
         {sortedTags?.map(tag => (
           <Tag key={tag.id} name={tag.attributes.name} />
         ))}

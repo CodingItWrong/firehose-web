@@ -77,7 +77,7 @@ export default function BookmarkRow({
           <Source source={source} />
         </div>
         {tags.length > 0 && (
-          <ul>
+          <ul className="tag-list">
             {tags.map(tag => (
               <Tag key={tag} name={tag} />
             ))}
