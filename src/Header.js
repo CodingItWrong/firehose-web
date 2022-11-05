@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <>
       <h1>Firehose</h1>
-      <button type="button" onClick={clearToken}>
+      <button type="button" data-cy="sign-out-button" onClick={clearToken}>
         Sign Out
       </button>
       <nav>
