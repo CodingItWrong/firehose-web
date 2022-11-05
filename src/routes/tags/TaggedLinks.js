@@ -23,7 +23,11 @@ export default function TaggedLinksScreen() {
   return (
     <>
       <h2>Tag: {tagName}</h2>
-      <BookmarkList query={query} queryKey={queryKey} />
+      <BookmarkList
+        query={query}
+        queryKey={queryKey}
+        path={`/tags/${tagName}`}
+      />
     </>
   );
 }

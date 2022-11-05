@@ -6,12 +6,12 @@ describe('read links', () => {
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=false&',
-      {fixture: 'no-bookmarks.json'},
+      {fixture: 'bookmarks/none.json'},
     ).as('loadBookmarks');
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=true&page[number]=1',
-      {fixture: 'read-bookmark.json'},
+      {fixture: 'bookmarks/read.json'},
     ).as('loadBookmarks');
     cy.intercept('PATCH', 'http://localhost:3000/api/bookmarks/1?').as(
       'updateBookmark',

@@ -6,7 +6,7 @@ describe('sign in', () => {
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=false&',
-      {fixture: 'unread-bookmark.json'},
+      {fixture: 'bookmarks/unread.json'},
     );
     cy.intercept('PATCH', 'http://localhost:3000/api/bookmarks/1?').as(
       'markBookmarkRead',

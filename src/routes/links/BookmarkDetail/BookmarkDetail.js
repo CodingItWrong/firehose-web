@@ -1,9 +1,11 @@
 import {useEffect, useState} from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useNavigate, useParams, useResolvedPath} from 'react-router-dom';
 import {useBookmarks} from '../../../data/bookmarks';
 import BookmarkDetailForm from './BookmarkDetailForm';
 
 export default function BookmarkDetail({parentPath}) {
+  const path = useResolvedPath();
+  console.log({path});
   console.log('BookmarkDetail', id);
   const {id} = useParams();
   const navigate = useNavigate();

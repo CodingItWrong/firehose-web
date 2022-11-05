@@ -15,14 +15,26 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
 
   return (
     <form onSubmit={handleSave}>
-      <TextInput type="url" label="URL" value={url} onChangeText={setUrl} />
-      <TextInput label="Title" value={title} onChangeText={setTitle} />
+      <TextInput
+        type="url"
+        label="URL"
+        value={url}
+        onChangeText={setUrl}
+        data-cy="url-field"
+      />
+      <TextInput
+        label="Title"
+        value={title}
+        onChangeText={setTitle}
+        data-cy="title-field"
+      />
       <TextInput
         label="Tags"
         value={tagList}
         onChangeText={setTagList}
         autoCapitalize="none"
         autoCorrect={false}
+        data-cy="tags-field"
       />
       <TextInput
         label="Source"
@@ -30,18 +42,22 @@ export default function BookmarkDetailForm({attributes, onSave, onCancel}) {
         onChangeText={setSource}
         autoCapitalize="none"
         autoCorrect={false}
+        data-cy="source-field"
       />
       <TextInput
         label="Comment"
         accessibilityLabel="Comment"
         value={comment}
         onChangeText={setComment}
+        data-cy="comment-field"
       />
       <ButtonGroup>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
-        <button type="submit">Save</button>
+        <button type="submit" data-cy="save-button">
+          Save
+        </button>
       </ButtonGroup>
     </form>
   );

@@ -1,0 +1,23 @@
+{
+    "data":
+    {
+        "id": "21",
+        "type": "bookmarks",
+        "links":
+        {
+            "self": "http://localhost:3000/api/bookmarks/21"
+        },
+        "attributes":
+        {
+            "title": "Mastodon",
+            "url": "https://joinmastodon.org",
+            "comment": null,
+            "source": null,
+            "read": false,
+            "moved-to-list-at": "2022-11-05T14:56:54.732Z",
+            "public": false,
+            "published-at": null,
+            "tag-list": ""
+        }
+    }
+}

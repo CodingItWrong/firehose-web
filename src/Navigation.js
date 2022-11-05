@@ -28,6 +28,10 @@ const router = createBrowserRouter([
         element: <ReadLinks />,
       },
       {
+        path: 'tags/:tagName/:id',
+        element: <BookmarkDetail parentPath="/tags/:tagName" />,
+      },
+      {
         path: 'tags/:tagName',
         element: <TaggedLinks />,
       },

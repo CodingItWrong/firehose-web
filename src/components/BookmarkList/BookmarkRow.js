@@ -97,7 +97,9 @@ export default function BookmarkRow({
             Mark Read
           </ButtonWithSpacing>
         )}{' '}
-        <Link to={`${path}/${bookmark.id}`}>Edit</Link>{' '}
+        <Link to={`${path}/${bookmark.id}`} data-cy="edit-link">
+          Edit
+        </Link>{' '}
         <ButtonWithSpacing
           mode="contained"
           onClick={() => onDelete()}

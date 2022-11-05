@@ -6,7 +6,7 @@ describe('unread links', () => {
     cy.intercept(
       'GET',
       'http://localhost:3000/api/bookmarks?filter[read]=false&',
-      {fixture: 'unread-bookmark.json'},
+      {fixture: 'bookmarks/unread.json'},
     ).as('loadBookmarks');
     cy.intercept('POST', 'http://localhost:3000/api/bookmarks?').as(
       'addBookmark',
@@ -26,7 +26,6 @@ describe('unread links', () => {
     cy.getTestId('email-field').type('example@example.com');
     cy.getTestId('password-field').type('password');
     cy.getTestId('sign-in-button').click();
-    cy.getTestId('tags-link').click();
 
     // list links
     cy.getTestId('bookmarks-list').contains('React Native');
