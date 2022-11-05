@@ -38,7 +38,7 @@ export default function BookmarkFlatList({
       {loadingIndicator === LOADING_INDICATOR.STANDALONE && (
         <LoadingIndicator />
       )}
-      <ul>
+      <ul data-cy="bookmarks-list">
         {bookmarks.map(bookmark => (
           <BookmarkRow
             key={bookmark.id}
