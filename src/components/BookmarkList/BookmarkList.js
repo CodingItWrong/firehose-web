@@ -3,7 +3,7 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import {useBookmarks} from '../../data/bookmarks';
 import PaginationControls from '../PaginationControls';
 import BookmarkFlatList, {LOADING_INDICATOR} from './BookmarkFlatList';
-// import NewBookmarkForm from './NewBookmarkForm';
+import NewBookmarkForm from './NewBookmarkForm';
 // import SearchForm from './SearchForm';
 
 export default function BookmarkList({
@@ -111,9 +111,9 @@ export default function BookmarkList({
 
   return (
     <>
-      {/*{showAddForm && (
+      {showAddForm && (
         <NewBookmarkForm isCreating={isCreating} onCreate={addBookmark} />
-      )}*/}
+      )}
       {/*{showSearchForm && <SearchForm onSubmit={onSearch} />}*/}
       {paginate && bookmarksResult.data && (
         <PaginationControls

@@ -101,7 +101,7 @@ export default function BookmarkRow({
         </ButtonWithSpacing>
         <ButtonWithSpacing
           mode="contained"
-          onClick={() => setIsDeleteDialogVisible(true)}
+          onClick={() => onDelete()}
           disabled={isUpdateInProgress}
         >
           Delete
