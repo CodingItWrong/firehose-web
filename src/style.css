@@ -6,3 +6,22 @@ input,
 button {
   font-size: inherit;
 }
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-header__title {
+  margin: 0;
+}
+
+.site-nav__list {
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__list-item {
+  display: inline-block;
+  margin-right: 10px;
+}

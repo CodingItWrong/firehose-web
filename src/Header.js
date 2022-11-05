@@ -5,28 +5,40 @@ export default function Layout() {
   const {clearToken} = useToken();
 
   return (
-    <>
-      <h1>Firehose</h1>
-      <button type="button" data-cy="sign-out-button" onClick={clearToken}>
-        Sign Out
-      </button>
+    <header className="site-header">
+      <h1 className="site-header__title">Firehose</h1>
       <nav>
-        <ul>
-          <li>
+        <ul className="site-nav__list">
+          <NavItem>
             <Link to="/">Unread</Link>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
             <Link to="/links/read" data-cy="read-link">
               Read
             </Link>
-          </li>
-          <li>
+          </NavItem>
+          <NavItem>
+            {' '}
             <Link to="/tags" data-cy="tags-link">
               Tags
             </Link>
-          </li>
+          </NavItem>
+          <NavItem>
+            {' '}
+            <button
+              type="button"
+              data-cy="sign-out-button"
+              onClick={clearToken}
+            >
+              Sign Out
+            </button>
+          </NavItem>
         </ul>
       </nav>
-    </>
+    </header>
   );
+}
+
+function NavItem({children}) {
+  return <li className="site-nav__list-item">{children}</li>;
 }
