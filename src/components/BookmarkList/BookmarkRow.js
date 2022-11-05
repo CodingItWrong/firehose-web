@@ -6,8 +6,6 @@ import Tag from '../Tag';
 export default function BookmarkRow({
   bookmark,
   path,
-  // onEdit,
-  onClickTag,
   onMarkRead,
   onMarkUnread,
   onDelete,
@@ -76,7 +74,7 @@ export default function BookmarkRow({
         {tags.length > 0 && (
           <ul>
             {tags.map(tag => (
-              <Tag key={tag} name={tag} onClick={() => onClickTag(tag)} />
+              <Tag key={tag} name={tag} />
             ))}
           </ul>
         )}
