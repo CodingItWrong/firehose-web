@@ -4,6 +4,7 @@ import BookmarkDetail from './routes/links/BookmarkDetail';
 import ReadLinks from './routes/links/Read';
 import UnreadLinks from './routes/links/Unread';
 import TagList from './routes/tags/TagList';
+import TaggedLinks from './routes/tags/TaggedLinks';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: 'links/read',
         element: <ReadLinks />,
+      },
+      {
+        path: 'tags/:tagName',
+        element: <TaggedLinks />,
       },
       {
         path: 'tags',
