@@ -4,7 +4,19 @@ body {
 
 input,
 button {
+  border: solid 1px gray;
+  border-radius: 5px;
+  color: black;
   font-size: inherit;
+  padding: 3px 6px;
+}
+
+button {
+  background-color: #eee;
+}
+
+input {
+  background-color: white;
 }
 
 .site-header {
