@@ -26,7 +26,7 @@ export default function PaginationControls({
         disabled={pageNumberAtMax}
         onClick={onIncrement}
       >
-        &gt
+        &gt;
       </button>
     </div>
   );
