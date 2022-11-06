@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Firehose',
+      template: './src/index.html',
     }),
   ],
   output: {
