@@ -1,5 +1,3 @@
-import reverse from 'lodash/reverse';
-import sortBy from 'lodash/sortBy';
 import {useCallback} from 'react';
 import {useParams} from 'react-router-dom';
 import BookmarkList from '../../components/BookmarkList';
@@ -15,7 +13,11 @@ export default function TaggedLinksScreen() {
       options: {include: 'bookmarks'},
     });
     const bookmarks = response.included;
-    const sortedBookmarks = reverse(sortBy(bookmarks, 'moved-to-list-at'));
+    console.log({bookmarks});
+    const sortedBookmarks = bookmarks.sort(
+      (a, b) =>
+        a.attributes['moved-to-list-at'] < b.attributes['moved-to-list-at'],
+    );
     return sortedBookmarks;
   }, [tagClient, tagName]);
   const queryKey = ['links-for-tag', tagName];

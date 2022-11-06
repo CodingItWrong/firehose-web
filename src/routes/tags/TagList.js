@@ -1,5 +1,4 @@
 import {useQuery} from '@tanstack/react-query';
-import sortBy from 'lodash/sortBy';
 import ErrorMessage from '../../components/ErrorMessage';
 import NoRecordsMessage from '../../components/NoRecordsMessage';
 import Tag from '../../components/Tag';
@@ -11,7 +10,10 @@ export default function TagList() {
   const tagClient = useTags();
   const tagResult = useQuery([TAGS_QUERY], () => tagClient.all());
 
-  const sortedTags = sortBy(tagResult?.data?.data, 'attributes.name');
+  const sortedTags =
+    tagResult?.data?.data?.sort(
+      (a, b) => a.attributes.name > b.attributes.name,
+    ) ?? [];
 
   function listHeader() {
     if (tagResult.isError) {
