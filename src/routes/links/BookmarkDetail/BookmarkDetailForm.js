@@ -19,21 +19,21 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
       <TextInput
         type="url"
         label="URL"
-        value={url}
+        value={url ?? ''}
         onChangeText={setUrl}
         className="solid-input"
         data-cy="url-field"
       />
       <TextInput
         label="Title"
-        value={title}
+        value={title ?? ''}
         onChangeText={setTitle}
         className="solid-input"
         data-cy="title-field"
       />
       <TextInput
         label="Tags"
-        value={tagList}
+        value={tagList ?? ''}
         onChangeText={setTagList}
         autoCapitalize="none"
         autoCorrect="off"
@@ -42,7 +42,7 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
       />
       <TextInput
         label="Source"
-        value={source}
+        value={source ?? ''}
         onChangeText={setSource}
         autoCapitalize="none"
         autoCorrect="off"
@@ -51,7 +51,7 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
       />
       <TextInput
         label="Comment"
-        value={comment}
+        value={comment ?? ''}
         onChangeText={setComment}
         className="solid-input"
         data-cy="comment-field"
