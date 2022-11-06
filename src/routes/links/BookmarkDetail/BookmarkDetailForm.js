@@ -36,7 +36,7 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         value={tagList}
         onChangeText={setTagList}
         autoCapitalize="none"
-        autoCorrect={false}
+        autoCorrect="off"
         className="solid-input"
         data-cy="tags-field"
       />
@@ -45,7 +45,7 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         value={source}
         onChangeText={setSource}
         autoCapitalize="none"
-        autoCorrect={false}
+        autoCorrect="off"
         className="solid-input"
         data-cy="source-field"
       />
