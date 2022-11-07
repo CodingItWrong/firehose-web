@@ -1,5 +1,6 @@
 const path = require('path');
 
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -8,9 +9,9 @@ module.exports = {
     app: './src/index.js',
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Firehose',
-      template: './src/index.html',
+    new HtmlWebpackPlugin({template: './src/index.html'}),
+    new CopyPlugin({
+      patterns: [{from: 'public', to: '.'}],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
