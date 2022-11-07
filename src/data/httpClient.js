@@ -23,7 +23,7 @@ class HttpClient {
     return {data};
   }
 
-  async post(url, body, {headers}) {
+  async post(url, body, {headers} = {}) {
     const response = await fetch(this.#fullUrl(url), {
       method: 'POST',
       headers: {...this.headers, ...headers},
@@ -33,7 +33,7 @@ class HttpClient {
     return {data};
   }
 
-  async patch(url, body, {headers}) {
+  async patch(url, body, {headers} = {}) {
     const response = await fetch(this.#fullUrl(url), {
       method: 'PATCH',
       headers: {...this.headers, ...headers},
@@ -43,7 +43,7 @@ class HttpClient {
     return {data};
   }
 
-  async delete(url, body, {headers}) {
+  async delete(url, body, {headers} = {}) {
     const response = await fetch(this.#fullUrl(url), {
       method: 'DELETE',
       headers: {...this.headers, ...headers},
