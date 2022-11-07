@@ -136,7 +136,7 @@ function Source({source}) {
 
   function renderSource() {
     const domain = domainForUrl(source);
-    const contents = <p>From {domain || source}</p>;
+    const contents = <span>From {domain || source}</span>;
     const wrapper = domain ? (
       <a href={source} target="_blank" rel="noreferrer">
         {contents}
