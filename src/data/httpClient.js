@@ -49,8 +49,12 @@ class HttpClient {
       headers: {...this.headers, ...headers},
       body: JSON.stringify(body),
     });
-    const data = await response.json();
-    return {data};
+    try {
+      const data = await response.json();
+      return {data};
+    } catch {
+      return {data: null};
+    }
   }
 
   #fullUrl(url) {
