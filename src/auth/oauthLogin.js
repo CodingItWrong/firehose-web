@@ -1,14 +1,18 @@
-const DEFAULT_PATH = '/oauth/token';
+const DEFAULT_PATH = 'oauth/token';
 const DEFAULT_ERROR_MESSAGE =
   'An error occurred while logging in. Please try again.';
 
 const oauthLogin = ({httpClient, path = DEFAULT_PATH, username, password}) =>
   httpClient
-    .post(path, {
-      grant_type: 'password',
-      username,
-      password,
-    })
+    .post(
+      path,
+      {
+        grant_type: 'password',
+        username,
+        password,
+      },
+      {headers: {'Content-Type': 'application/json'}},
+    )
     .then(response => response.data.access_token)
     .catch(handleErrorResponse);
 
