@@ -133,3 +133,4 @@ dist
 .netlify
 
 .DS_Store
+cypress/screenshots
