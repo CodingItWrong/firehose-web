@@ -25,7 +25,7 @@ export default function BookmarkDetail({parentPath}) {
   async function handleSave(attributes) {
     try {
       await bookmarkClient.update({id, attributes});
-      navigate(parentPath);
+      navigate(parentPathToUse);
     } catch (e) {
       console.error(e);
     }
