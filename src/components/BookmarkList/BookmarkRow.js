@@ -138,7 +138,12 @@ function Source({source}) {
     const domain = domainForUrl(source);
     const contents = <span>From {domain || source}</span>;
     const wrapper = domain ? (
-      <a href={source} target="_blank" rel="noreferrer">
+      <a
+        href={source}
+        target="_blank"
+        rel="noreferrer"
+        className="bookmark__url"
+      >
         {contents}
       </a>
     ) : (
