@@ -13,9 +13,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{from: 'public', to: '.'}],
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
+    // MiniCssExtractPlugin configured via child configs
   ],
   output: {
     filename: '[name].[contenthash].js',
