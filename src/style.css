@@ -68,6 +68,7 @@ body {
 .bookmark {
   border-bottom: solid 1px gray;
   padding: 10px 0;
+  overflow: hidden;
 }
 
 .bookmark__title {
