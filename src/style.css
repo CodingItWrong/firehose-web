@@ -3,6 +3,11 @@ body {
   font-family: Arial;
 }
 
+.page-container {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
 .solid-input {
   background-color: white;
   border: solid 1px gray;
