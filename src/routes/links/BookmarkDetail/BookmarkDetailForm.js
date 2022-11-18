@@ -21,14 +21,12 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         label="URL"
         value={url ?? ''}
         onChangeText={setUrl}
-        className="solid-input"
         data-cy="url-field"
       />
       <TextInput
         label="Title"
         value={title ?? ''}
         onChangeText={setTitle}
-        className="solid-input"
         data-cy="title-field"
       />
       <TextInput
@@ -37,7 +35,6 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         onChangeText={setTagList}
         autoCapitalize="none"
         autoCorrect="off"
-        className="solid-input"
         data-cy="tags-field"
       />
       <TextInput
@@ -53,7 +50,6 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         label="Comment"
         value={comment ?? ''}
         onChangeText={setComment}
-        className="solid-input"
         data-cy="comment-field"
       />
       <ButtonGroup>
@@ -76,10 +72,10 @@ const TextInput = ({label, onChangeText, ...props}) => {
         <label htmlFor={id}>{label}</label>
       </div>
       <div>
-        <input
-          type="text"
+        <textarea
           id={id}
           onChange={e => onChangeText(e.target.value)}
+          className="solid-input"
           {...props}
         />
       </div>
