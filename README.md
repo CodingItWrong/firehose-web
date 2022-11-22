@@ -1,4 +1,4 @@
-# firehose-expo
+# firehose-web
 
 Client for the [Firehose link-saving app](https://github.com/CodingItWrong/firehose-api). Implemented with React.
 
