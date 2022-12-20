@@ -2,6 +2,7 @@ import {useCallback} from 'react';
 import {useParams} from 'react-router-dom';
 import BookmarkList from '../../components/BookmarkList';
 import {useTags} from '../../data/tags';
+import sort from '../../utils/sort';
 
 export default function TaggedLinksScreen() {
   const {tagName} = useParams();
@@ -12,11 +13,9 @@ export default function TaggedLinksScreen() {
       filter: {name: tagName},
       options: {include: 'bookmarks'},
     });
-    const bookmarks = response.included;
-    console.log({bookmarks});
-    const sortedBookmarks = bookmarks.sort(
-      (a, b) =>
-        a.attributes['moved-to-list-at'] < b.attributes['moved-to-list-at'],
+    const sortedBookmarks = sort(
+      response.included,
+      b => b.attributes['moved-to-list-at'],
     );
     return sortedBookmarks;
   }, [tagClient, tagName]);

@@ -3,6 +3,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import NoRecordsMessage from '../../components/NoRecordsMessage';
 import Tag from '../../components/Tag';
 import {useTags} from '../../data/tags';
+import sort from '../../utils/sort';
 
 const TAGS_QUERY = 'tags';
 
@@ -10,10 +11,10 @@ export default function TagList() {
   const tagClient = useTags();
   const tagResult = useQuery([TAGS_QUERY], () => tagClient.all());
 
-  const sortedTags =
-    tagResult?.data?.data?.sort(
-      (a, b) => a.attributes.name > b.attributes.name,
-    ) ?? [];
+  const sortedTags = sort(
+    [...(tagResult?.data?.data ?? [])],
+    t => t.attributes.name,
+  );
 
   function listHeader() {
     if (tagResult.isError) {
