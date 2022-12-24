@@ -86,6 +86,10 @@ body {
   color: gray;
 }
 
+.bookmark__source {
+  color: gray;
+}
+
 .tag-list {
   margin: 0;
   padding: 0;

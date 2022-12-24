@@ -136,7 +136,9 @@ function Source({source}) {
 
   function renderSource() {
     const domain = domainForUrl(source);
-    const contents = <span>From {domain || source}</span>;
+    const contents = (
+      <span className="bookmark__source">From {domain || source}</span>
+    );
     const wrapper = domain ? (
       <a
         href={source}
