@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import ButtonGroup from '../../../components/ButtonGroup';
 
 export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
