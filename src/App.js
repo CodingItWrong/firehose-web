@@ -18,7 +18,9 @@ export default function App() {
     <TokenProvider>
       <TokenLoadBuffer>
         <QueryClientProvider client={queryClient}>
-          <Body />
+          <div className="page-container">
+            <Body />
+          </div>
         </QueryClientProvider>
       </TokenLoadBuffer>
     </TokenProvider>

@@ -1,5 +1,5 @@
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Layout from './Layout';
+import NavLayout from './NavLayout';
 import BookmarkDetail from './routes/links/BookmarkDetail';
 import ReadLinks from './routes/links/Read';
 import UnreadLinks from './routes/links/Unread';
@@ -9,7 +9,7 @@ import TaggedLinks from './routes/tags/TaggedLinks';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <NavLayout />,
     children: [
       {
         path: '',
