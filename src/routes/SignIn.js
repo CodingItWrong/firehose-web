@@ -1,6 +1,7 @@
 import oauthLogin from '../auth/oauthLogin';
 import useLoginForm from '../auth/useLoginForm';
 import ErrorMessage from '../components/ErrorMessage';
+import Title from '../components/Title';
 import httpClient from '../data/httpClient';
 import {useToken} from '../data/token';
 
@@ -21,27 +22,30 @@ export default function SignIn() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        data-cy="email-field"
-        value={username}
-        onChange={handleChange('username')}
-        autoCapitalize="none"
-        autoCorrect="off"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        data-cy="password-field"
-        value={password}
-        onChange={handleChange('password')}
-      />
-      <ErrorMessage>{error}</ErrorMessage>
-      <button type="submit" data-cy="sign-in-button">
-        Sign in
-      </button>
-    </form>
+    <>
+      <Title />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          data-cy="email-field"
+          value={username}
+          onChange={handleChange('username')}
+          autoCapitalize="none"
+          autoCorrect="off"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          data-cy="password-field"
+          value={password}
+          onChange={handleChange('password')}
+        />
+        <ErrorMessage>{error}</ErrorMessage>
+        <button type="submit" data-cy="sign-in-button">
+          Sign in
+        </button>
+      </form>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import Title from './components/Title';
 import {useToken} from './data/token';
 
 export default function Layout() {
@@ -6,7 +7,7 @@ export default function Layout() {
 
   return (
     <header className="site-header">
-      <h1 className="site-header__title">Firehose</h1>
+      <Title />
       <nav>
         <ul className="site-nav__list">
           <NavItem>
