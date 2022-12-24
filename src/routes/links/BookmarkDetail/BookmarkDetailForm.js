@@ -1,8 +1,9 @@
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import ButtonGroup from '../../../components/ButtonGroup';
 
 export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
+  const navigate = useNavigate();
   const [url, setUrl] = useState(attributes.url);
   const [title, setTitle] = useState(attributes.title);
   const [tagList, setTagList] = useState(attributes['tag-list']);
@@ -53,9 +54,13 @@ export default function BookmarkDetailForm({attributes, onSave, cancelPath}) {
         data-cy="comment-field"
       />
       <ButtonGroup>
-        <Link to={cancelPath} className="solid-button">
+        <button
+          type="button"
+          className="solid-button"
+          onClick={() => navigate(cancelPath)}
+        >
           Cancel
-        </Link>
+        </button>{' '}
         <button type="submit" className="solid-button" data-cy="save-button">
           Save
         </button>

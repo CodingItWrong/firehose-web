@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import domainForUrl from '../../utils/domainForUrl';
 import Tag from '../Tag';
 
@@ -10,6 +10,7 @@ export default function BookmarkRow({
   onMarkUnread,
   onDelete,
 }) {
+  const navigate = useNavigate();
   // const [isDeleteDialogVisible, setIsDeleteDialogVisible] = useState(false);
   const [isUpdateInProgress, setIsUpdateInProgress] = useState(false);
 
@@ -101,13 +102,12 @@ export default function BookmarkRow({
             Mark Read
           </ButtonWithSpacing>
         )}{' '}
-        <Link
-          to={`${path}/${bookmark.id}`}
-          className="solid-button"
+        <ButtonWithSpacing
           data-cy="edit-link"
+          onClick={() => navigate(`${path}/${bookmark.id}`)}
         >
           Edit
-        </Link>{' '}
+        </ButtonWithSpacing>{' '}
         <ButtonWithSpacing
           mode="contained"
           onClick={() => onDelete()}
