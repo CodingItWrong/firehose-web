@@ -29,7 +29,7 @@ body {
   border: solid 1px gray;
   border-radius: 5px;
   color: black;
-  cursor: default;
+  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   font-weight: normal;
