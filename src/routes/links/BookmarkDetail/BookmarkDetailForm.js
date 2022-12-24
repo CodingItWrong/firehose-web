@@ -76,7 +76,7 @@ const TextInput = ({label, onChangeText, ...props}) => {
       <div>
         <label htmlFor={id}>{label}</label>
       </div>
-      <div>
+      <div className="input-row">
         <textarea
           id={id}
           onChange={e => onChangeText(e.target.value)}

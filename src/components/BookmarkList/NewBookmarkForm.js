@@ -20,7 +20,7 @@ export default function NewBookmarkForm({isCreating, onCreate}) {
       <div>
         <label htmlFor="url-to-add-field">URL to add</label>
       </div>
-      <div>
+      <div className="input-row">
         <input
           type="url"
           id="url-to-add-field"
