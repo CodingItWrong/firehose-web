@@ -33,6 +33,7 @@ export default function SignIn() {
           onChange={handleChange('username')}
           autoCapitalize="none"
           autoCorrect="off"
+          className="solid-input"
         />
         <input
           type="password"
@@ -40,9 +41,10 @@ export default function SignIn() {
           data-cy="password-field"
           value={password}
           onChange={handleChange('password')}
+          className="solid-input"
         />
         <ErrorMessage>{error}</ErrorMessage>
-        <button type="submit" data-cy="sign-in-button">
+        <button type="submit" data-cy="sign-in-button" className="solid-button">
           Sign in
         </button>
       </form>
