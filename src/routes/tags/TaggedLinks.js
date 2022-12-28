@@ -17,6 +17,7 @@ export default function TaggedLinksScreen() {
       response.included,
       b => b.attributes['moved-to-list-at'],
     );
+    sortedBookmarks.reverse();
     return sortedBookmarks;
   }, [tagClient, tagName]);
   const queryKey = ['links-for-tag', tagName];
