@@ -25,24 +25,28 @@ export default function SignIn() {
     <>
       <Title />
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          data-cy="email-field"
-          value={username}
-          onChange={handleChange('username')}
-          autoCapitalize="none"
-          autoCorrect="off"
-          className="solid-input"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          data-cy="password-field"
-          value={password}
-          onChange={handleChange('password')}
-          className="solid-input"
-        />
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            data-cy="email-field"
+            value={username}
+            onChange={handleChange('username')}
+            autoCapitalize="none"
+            autoCorrect="off"
+            className="solid-input"
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            data-cy="password-field"
+            value={password}
+            onChange={handleChange('password')}
+            className="solid-input"
+          />
+        </div>
         <ErrorMessage>{error}</ErrorMessage>
         <button type="submit" data-cy="sign-in-button" className="solid-button">
           Sign in
