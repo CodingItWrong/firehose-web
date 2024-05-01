@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import oauthLogin from '../auth/oauthLogin';
 import useLoginForm from '../auth/useLoginForm';
 import ErrorMessage from '../components/ErrorMessage';
@@ -6,6 +7,7 @@ import httpClient from '../data/httpClient';
 import {useToken} from '../data/token';
 
 export default function SignIn() {
+  const [loading, setLoading] = useState(false);
   const {setToken} = useToken();
   const onLogIn = ({username, password}) =>
     oauthLogin({
@@ -16,9 +18,11 @@ export default function SignIn() {
   const {username, password, error, handleChange, handleLogIn} =
     useLoginForm(onLogIn);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    handleLogIn();
+    setLoading(true);
+    await handleLogIn();
+    setLoading(false);
   }
 
   return (
@@ -48,8 +52,13 @@ export default function SignIn() {
           />
         </div>
         <ErrorMessage>{error}</ErrorMessage>
-        <button type="submit" data-cy="sign-in-button" className="solid-button">
-          Sign in
+        <button
+          type="submit"
+          data-cy="sign-in-button"
+          className="solid-button"
+          disabled={loading}
+        >
+          {loading ? 'Signing in…' : 'Sign in'}
         </button>
       </form>
     </>
