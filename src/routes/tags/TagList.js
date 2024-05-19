@@ -18,7 +18,9 @@ export default function TagList() {
   );
 
   function listHeader() {
-    if (tagResult.isError) {
+    if (tagResult.isLoading) {
+      return <LoadingIndicator />;
+    } else if (tagResult.isError) {
       return <ErrorMessage>An error occurred while loading tags.</ErrorMessage>;
     } else if (sortedTags.length === 0) {
       return <NoRecordsMessage>No tags.</NoRecordsMessage>;
@@ -31,7 +33,6 @@ export default function TagList() {
     <>
       <h2>Tags</h2>
       {listHeader()}
-      {tagResult.isLoading && <LoadingIndicator />}
       <ul className="tag-list">
         {sortedTags?.map(tag => (
           <Tag key={tag.id} name={tag.attributes.name} />
