@@ -1,5 +1,6 @@
 import {useQuery} from '@tanstack/react-query';
 import ErrorMessage from '../../components/ErrorMessage';
+import LoadingIndicator from '../../components/LoadingIndicator';
 import NoRecordsMessage from '../../components/NoRecordsMessage';
 import Tag from '../../components/Tag';
 import {useTags} from '../../data/tags';
@@ -30,6 +31,7 @@ export default function TagList() {
     <>
       <h2>Tags</h2>
       {listHeader()}
+      {tagResult.isLoading && <LoadingIndicator />}
       <ul className="tag-list">
         {sortedTags?.map(tag => (
           <Tag key={tag.id} name={tag.attributes.name} />
