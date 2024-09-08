@@ -28,7 +28,7 @@ export default function BookmarkList({
   const clearErrorMessage = () => setErrorMessage(null);
   const [isCreating, setIsCreating] = useState(false);
   const listRef = useRef(null);
-  const bookmarksResult = useQuery(queryKey, query);
+  const bookmarksResult = useQuery({queryKey, queryFn: query});
   const queryClient = useQueryClient();
 
   const loadingIndicatorToUse = isPerformingInitialLoad

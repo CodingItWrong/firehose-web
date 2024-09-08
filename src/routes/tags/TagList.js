@@ -10,7 +10,10 @@ const TAGS_QUERY = 'tags';
 
 export default function TagList() {
   const tagClient = useTags();
-  const tagResult = useQuery([TAGS_QUERY], () => tagClient.all());
+  const tagResult = useQuery({
+    queryKey: [TAGS_QUERY],
+    queryFn: () => tagClient.all(),
+  });
 
   const sortedTags = sort(
     [...(tagResult?.data?.data ?? [])],
